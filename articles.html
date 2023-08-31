@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Neurobg</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+<meta charset="UTF-8">
+<script type="text/javascript">
+  const pagination = document.querySelector('.pagination');
+const pageNumbers = pagination.querySelector('.page-numbers');
+const prevButton = pagination.querySelector('.prev');
+const nextButton = pagination.querySelector('.next');
+
+// Set number of pages and current page
+const totalPages = 2;
+let currentPage = 1;
+
+// Generate page numbers
+function generatePageNumbers() {
+  let pagesHTML = '';
+  for (let i = 1; i <= totalPages; i++) {
+    pagesHTML += `<a class="${currentPage === i ? 'active' : ''}">${i}</a>`;
+  }
+  pageNumbers.innerHTML = pagesHTML;
+}
+
+// Generate page numbers on initial load
+generatePageNumbers();
+
+// Update active page
+function updateActivePage() {
+  const pageLinks = pageNumbers.querySelectorAll('a');
+  pageLinks.forEach(link => link.classList.remove('active'));
+  pageLinks[currentPage - 1].classList.add('active');
+}
+
+// Update page numbers and active page when previous button is clicked
+prevButton.addEventListener('click', () => {
+  if (currentPage > 1) {
+    currentPage--;
+    generatePageNumbers();
+    updateActivePage();
+  }
+});
+
+// Update page numbers and active page when next button is clicked
+nextButton.addEventListener('click', () => {
+  if (currentPage < totalPages) {
+    currentPage++;
+    generatePageNumbers();
+    updateActivePage();
+  }
+});
+
+// Update page numbers and active page when page number is clicked
+pageNumbers.addEventListener('click', (event) => {
+  const pageNumber = event.target.innerText;
+  if (pageNumber && currentPage !== parseInt(pageNumber)) {
+    currentPage = parseInt(pageNumber);
+    generatePageNumbers();
+    updateActivePage();
+  }
+});
+
+</script>
+
+</head>
+<body>
+
+<header>
+  
+</header>
+
+<nav>
+  <ul>
+     <li><a href="index.html">Начало</a></li>
+    <li><a href="articles.html">Статии</a></li>
+    <li><a href="contacts.html">Контакти</a></li>
+    <li><a href="shop.html">Магазин</a></li>
+  </ul>
+</nav>
+
+<div class="articles-section">
+ 
+  <div class="article-container">
+    <div class="article">
+      <div class="article-img">
+        <img src="pictures/parkinsonim.jpg" alt="Article 1">
+      </div>
+      <div class="article-content">
+        <h3>Болест на Паркинсон</h3>
+        <p>Описана е за първи път от J. Parkinson през 1817 г. и е едно от най-честите невродегенеративни заболявания.</p>
+        <a href="parkinson.html">Прочети още</a>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article-img">
+        <img src="pictures/epilepsiqim.jpg" alt="Article 2">
+      </div>
+      <div class="article-content">
+        <h3>Епилепсия</h3>
+        <p>Епилепсиите са хронични заболявания на главния мозък с различна етиология, характеризиращи се с повтарящи се пристъпи</p>
+        <a href="epilepsiq.html">Прочети още</a>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article-img">
+        <img src="pictures/migrenaim.jpg" alt="Article 3">
+      </div>
+      <div class="article-content">
+        <h3>Мигрена</h3>
+        <p>Главоболието е едно от най-често срещаните страдания, което може да бъде самостоятелно заболяване или симптом при различни органични или психични болести.</p>
+        <a href="migrena.html">Прочети още</a>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article-img">
+        <img src="pictures/meningioma.jpg" alt="Article 4">
+      </div>
+      <div class="article-content">
+        <h3>Менингеоми</h3>
+        <p>Менингеомите са добродушни опухоли, които се развиват върху обвивките на мозъка и на гръбначния канал, наречени менинги.</p>
+        <a href="meningeoma.html">Прочети още</a>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article-img">
+        <img src="pictures/msim.jpg" alt="Article 5">
+      </div>
+      <div class="article-content">
+        <h3>Мултиплена склероза</h3>
+        <p>Мултиплената (множествената) склероза /МС/ е хронично възпалително автоимунно 
+заболяване на ЦНС</p>
+        <a href="ms.html">Прочети още</a>
+      </div>
+    </div>
+	<div class="article">
+      <div class="article-img">
+        <img src="pictures/facialis.jpg" alt="Article 4">
+      </div>
+      <div class="article-content">
+        <h3>Неврит на n.facialis</h3>
+        <p>Най-честата причина за засягането на лицевия нерв е първичен идиопатичен
+възпалителен процес във връзка с простуден, токсо-инфекциозен фактор.</p>
+        <a href="facialis.html">Прочети още</a>
+      </div>
+    </div>
+	<div class="article">
+      <div class="article-img">
+        <img src="pictures/strokeim.jpg" alt="Article 4">
+      </div>
+      <div class="article-content">
+        <h3>Паренхимни мозъчни кръвоизливи</h3>
+        <p>Паренхимните мозъчни кръвоизливи (ПМК) са около 10-20% от всички мозъчни инсулти.
+Имат високия леталитет, достигащ над 50%, тежката инвалидизация при преживелите и сравнително 
+по-младата възраст, при която настъпва заболяването.</p>
+        <a href="stroke.html">Прочети още</a>
+      </div>
+    </div>
+	<div class="article">
+      <div class="article-img">
+        <img src="pictures/lumbalhernia.jpeg" alt="Article 4">
+      </div>
+      <div class="article-content">
+        <h3>Заболявания на лумбосакралните коренчета и лумбосакралния плексус</h3>
+        <p>Заболяванията на лумбосакралните коренчета са най-честите болести на периферната нервна 
+система. </p>
+        <a href="hearnia.html">Прочети още</a>
+      </div>
+    </div>
+	<div class="article">
+      <div class="article-img">
+        <img src="pictures/osteohondrosis.jpeg" alt="Article 4">
+      </div>
+      <div class="article-content">
+        <h3>Мононеврити и мононевропатии на ръката</h3>
+        <p> Невритите и невропатии на нервите на ръката се дължат на възпалителни, травматични, исхемични и токсични причини. Характерна е компресивната невропатия (entrapement neuropathy). </p>
+        <a href="osteohondrosis.html">Прочети още</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="pagination">
+  <a href="articles.html" class="prev">&laquo; Предходна</a>
+  <div class="page-numbers"></div>
+  <a href="articles1.html" class="next">Следваща&raquo;</a>
+</div>
+
+
+
+   <footer>
+  <div class="footer-container">
+    <div class="footer-links">
+      <a href="index.html">Начало</a>
+      <a href="articles.html">Статии</a>
+      <a href="contacts.html">Контакти</a>
+    </div>
+    <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <p>Copyright © 2023
+        All rights reserved</p>
+      </div>
+</footer>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Neurobg</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+<meta charset="UTF-8">
+<script type="text/javascript">
+  const pagination = document.querySelector('.pagination');
+const pageNumbers = pagination.querySelector('.page-numbers');
+const prevButton = pagination.querySelector('.prev');
+const nextButton = pagination.querySelector('.next');
+
+// Set number of pages and current page
+const totalPages = 10;
+let currentPage = 1;
+
+// Generate page numbers
+function generatePageNumbers() {
+  let pagesHTML = '';
+  for (let i = 1; i <= totalPages; i++) {
+    pagesHTML += `<a class="${currentPage === i ? 'active' : ''}">${i}</a>`;
+  }
+  pageNumbers.innerHTML = pagesHTML;
+}
+
+// Generate page numbers on initial load
+generatePageNumbers();
+
+// Update active page
+function updateActivePage() {
+  const pageLinks = pageNumbers.querySelectorAll('a');
+  pageLinks.forEach(link => link.classList.remove('active'));
+  pageLinks[currentPage - 1].classList.add('active');
+}
+
+// Update page numbers and active page when previous button is clicked
+prevButton.addEventListener('click', () => {
+  if (currentPage > 1) {
+    currentPage--;
+    generatePageNumbers();
+    updateActivePage();
+  }
+});
+
+// Update page numbers and active page when next button is clicked
+nextButton.addEventListener('click', () => {
+  if (currentPage < totalPages) {
+    currentPage++;
+    generatePageNumbers();
+    updateActivePage();
+  }
+});
+
+// Update page numbers and active page when page number is clicked
+pageNumbers.addEventListener('click', (event) => {
+  const pageNumber = event.target.innerText;
+  if (pageNumber && currentPage !== parseInt(pageNumber)) {
+    currentPage = parseInt(pageNumber);
+    generatePageNumbers();
+    updateActivePage();
+  }
+});
+
+</script>
+
+</head>
+<body>
+
+<header>
+  
+</header>
+
+<nav>
+  <ul>
+     <li><a href="index.html">Начало</a></li>
+    <li><a href="articles.html">Статии</a></li>
+    <li><a href="contacts.html">Контакти</a></li>
+    <li><a href="shop.html">Магазин</a></li>
+  </ul>
+</nav>
+
+<div class="articles-section">
+ 
+  <div class="article-container">
+    <div class="article">
+      <div class="article-img">
+        <img src="pictures/headcon.jpg" alt="Article 1">
+      </div>
+      <div class="article-content">
+        <h3>Мозъчно сътресение</h3>
+        <p>Мозъчното сътресение е типично травматично нараняване на главата, при което се нарушава нормалната функция на мозъка. </p>
+        <a href="sutresenie.html">Прочети още</a>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article-img">
+        <img src="pictures/contusion.jpg" alt="Article 2">
+      </div>
+      <div class="article-content">
+        <h3>Контузия на мозъка</h3>
+        <p>Контузията на мозъка е форма на травматично нараняване на главата, при което мозъчното тъкан е увредено, но без да се наблюдава проникване на черепната кутия.</p>
+        <a href="kontuziq.html">Прочети още</a>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article-img">
+        <img src="pictures/subheamatoma.jpg" alt="Article 3">
+      </div>
+      <div class="article-content">
+        <h3>Субдурален хематом</h3>
+        <p>Субдуралният хематом е сериозно медицинско състояние, при което кръв се натрупва между повърхността на мозъка и вътрешната страна на черепната кутия.</p>
+        <a href="subduralen.html">Прочети още</a>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article-img">
+        <img src="pictures/epiheamatoma.jpg" alt="Article 4">
+      </div>
+      <div class="article-content">
+        <h3>Епидурален хематом</h3>
+        <p>Епидуралният хематом е сериозно медицинско състояние, при което кръв се натрупва между черепната кутия и тънкия външен слой на мозъка, наречен дура материя. </p>
+        <a href="epiduralen.html">Прочети още</a>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article-img">
+        <img src="pictures/mg.jpg" alt="Article 5">
+      </div>
+      <div class="article-content">
+        <h3>Миастения гравис</h3>
+        <p><p>Миастеният гравис (MG) е автоимунно невромускулно заболяване, което засяга комуникацията между нервите и мускулите. </p>
+        <a href="mg.html">Прочети още</a>
+      </div>
+    </div>
+	<div class="article">
+      <div class="article-img">
+        <img src="pictures/ah.jpg" alt="Article 4">
+      </div>
+      <div class="article-content">
+        <h3>Болест на Алцхаймер</h3>
+        <p>Болестта на Алцхаймер е прогресивно неврологично заболяване и най-честата форма на деменция.</p>
+        <a href="alzh.html">Прочети още</a>
+      </div>
+    </div>
+	<div class="article">
+      <div class="article-img">
+        <img src=" pictures/kf.jpg"alt="Article 4">
+      </div>
+      <div class="article-content">
+        <h3>Хепатолентикуларна дегенерация</h3>
+        <p>Хепатоцеребралната дегенерация (ХЦД) е рядко наследствено неврометаболитно заболяване, което засяга нервната система и черния дроб.</p>
+        <a href="hepatod.html">Прочети още</a>
+      </div>
+    </div>
+	<div class="article">
+      <div class="article-img">
+        <img src="pictures/hld.jpg"alt="Article 4">
+      </div>
+      <div class="article-content">
+        <h3>Болест на Пик</h3>
+        <p><p>Болест на Пик, известна също като Наследствена сензорна и моторна невропатия тип 1 (НСМН-1), е рядко генетическо неврологично заболяване, което засяга периферната нервна система. </p>
+        <a href="pick.html">Прочети още</a>
+      </div>
+    </div>
+	<div class="article">
+      <div class="article-img">
+        <img src="pictures/trcs.jpg" alt="Article 4">
+      </div>
+      <div class="article-content">
+        <h3>Травмена церабрестения</h3>
+        <p>Травматичната енцефалопатия (ТЕ) е неврологично заболяване, което се развива след травматично нараняване на главата или мозъка.</p>
+        <a href="travmenaen.html">Прочети още</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="pagination">
+  <a href="articles1.html" class="prev">&laquo; Предходна</a>
+  <div class="page-numbers"></div>
+  <a href="articles3.html" class="next">Следваща&raquo;</a>
+</div>
+
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-links">
+      <a href="index.html">Начало</a>
+      <a href="articles.html">Статии</a>
+      <a href="contacts.html">Контакти</a>
+    </div>
+    <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <p>Copyright © 2023
+        All rights reserved</p>
+      </div>
+</footer>
+
+
+
+</body>
+</html>

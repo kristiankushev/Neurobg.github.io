@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Neurobg</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+<meta charset="UTF-8">
+<script type="text/javascript">
+  const pagination = document.querySelector('.pagination');
+const pageNumbers = pagination.querySelector('.page-numbers');
+const prevButton = pagination.querySelector('.prev');
+const nextButton = pagination.querySelector('.next');
+
+// Set number of pages and current page
+const totalPages = 10;
+let currentPage = 1;
+
+// Generate page numbers
+function generatePageNumbers() {
+  let pagesHTML = '';
+  for (let i = 1; i <= totalPages; i++) {
+    pagesHTML += `<a class="${currentPage === i ? 'active' : ''}">${i}</a>`;
+  }
+  pageNumbers.innerHTML = pagesHTML;
+}
+
+// Generate page numbers on initial load
+generatePageNumbers();
+
+// Update active page
+function updateActivePage() {
+  const pageLinks = pageNumbers.querySelectorAll('a');
+  pageLinks.forEach(link => link.classList.remove('active'));
+  pageLinks[currentPage - 1].classList.add('active');
+}
+
+// Update page numbers and active page when previous button is clicked
+prevButton.addEventListener('click', () => {
+  if (currentPage > 1) {
+    currentPage--;
+    generatePageNumbers();
+    updateActivePage();
+  }
+});
+
+// Update page numbers and active page when next button is clicked
+nextButton.addEventListener('click', () => {
+  if (currentPage < totalPages) {
+    currentPage++;
+    generatePageNumbers();
+    updateActivePage();
+  }
+});
+
+// Update page numbers and active page when page number is clicked
+pageNumbers.addEventListener('click', (event) => {
+  const pageNumber = event.target.innerText;
+  if (pageNumber && currentPage !== parseInt(pageNumber)) {
+    currentPage = parseInt(pageNumber);
+    generatePageNumbers();
+    updateActivePage();
+  }
+});
+
+</script>
+
+</head>
+<body>
+
+<header>
+  
+</header>
+
+<nav>
+  <ul>
+     <li><a href="index.html">Начало</a></li>
+    <li><a href="articles.html">Статии</a></li>
+    <li><a href="contacts.html">Контакти</a></li>
+    <li><a href="shop.html">Магазин</a></li>
+  </ul>
+</nav>
+
+<div class="articles-section">
+ 
+  <div class="article-container">
+    <div class="article">
+      <div class="article-img">
+        <img src="pictures/trigeminalneuralgia.jpg" alt="Article 1">
+      </div>
+      <div class="article-content">
+        <h3>Тригеминална невралгия</h3>
+        <p>Троичният нерв е смесен, предимно сетивен нерв. 
+Той пренася общосетивни аферентни влакна за усет 
+за болка, температура, проприорецепция, вибрационен и дискриминационен усет от кожата и мускулите на лицето</p>
+        <a href="trigeminal.html">Прочети още</a>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article-img">
+        <img src="pictures/polineuropathy.jpg" alt="Article 2">
+      </div>
+      <div class="article-content">
+        <h3>Полиневропатии</h3>
+        <p>Полиневропатията е медицински термин, използван за описване на група неврологични заболявания, които засягат множество периферни нерви в тялото.</p>
+        <a href="polineuropathy.html">Прочети още</a>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article-img">
+        <img src="pictures/vmeningitidis.jpg" alt="Article 3">
+      </div>
+      <div class="article-content">
+        <h3>Вирусен менингит</h3>
+        <p>Вирусният менингит е възпалително заболяване на мозъчните обвивки (менингите), причинено от различни вируси. Това състояние може да бъде сериозно</p>
+        <a href="vmeningitidis.html">Прочети още</a>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article-img">
+        <img src="pictures/encephalytis.jpg" alt="Article 4">
+      </div>
+      <div class="article-content">
+        <h3>Енцефалит</h3>
+        <p>Енцефалитът е възпалително заболяване на мозъка, което може да бъде предизвикано от различни причини, включително инфекции с вируси, бактерии, паразити или гъби.</p>
+        <a href="encephalytis.html">Прочети още</a>
+      </div>
+    </div>
+    <div class="article">
+      <div class="article-img">
+        <img src="pictures/myelitis.jpg" alt="Article 5">
+      </div>
+      <div class="article-content">
+        <h3>Миелити</h3>
+        <p>Миелитът е възпалително заболяване на спиналния мозък, което може да бъде предизвикано от различни причини, включително инфекции, автоимунни реакции и други фактори. </p>
+        <a href="myelitis.html">Прочети още</a>
+      </div>
+    </div>
+	<div class="article">
+      <div class="article-img">
+        <img src="pictures/als.jpg" alt="Article 4">
+      </div>
+      <div class="article-content">
+        <h3>Амиотрофична латерална склероза</h3>
+        <p>Амиотрофичната латерална склероза (АЛС) е неврологично заболяване, което засяга нервната система и причинява прогресивно увреждане на моторните неврони в мозъка и спиналния мозък.</p>
+        <a href="als.html">Прочети още</a>
+      </div>
+    </div>
+	<div class="article">
+      <div class="article-img">
+        <img src="pictures/neurosyphilis.jpg" alt="Article 4">
+      </div>
+      <div class="article-content">
+        <h3>Невросифилис</h3>
+        <p>Невросифилисът е форма на сифилис, който засяга нервната система. Това е инфекциозно заболяване, което се предава чрез сексуален контакт или от майка на новороденото по време на бременност или раждане.</p>
+        <a href="neurosyphilis.html">Прочети още</a>
+      </div>
+    </div>
+	<div class="article">
+      <div class="article-img">
+        <img src="pictures/headache.jpg" alt="Article 4">
+      </div>
+      <div class="article-content">
+        <h3>Главоболие</h3>
+        <p>Главоболието е често срещано състояние, при което човек изпитва усещане за болка или дискомфорт в областта на главата. Това може да бъде резултат от различни фактори и състояния и може да се прояви в различни форми и интензитет.</p>
+        <a href="headache.html">Прочети още</a>
+      </div>
+    </div>
+	<div class="article">
+      <div class="article-img">
+        <img src="pictures/tumors.jpg" alt="Article 4">
+      </div>
+      <div class="article-content">
+        <h3>Тумори на главен мозък</h3>
+        <p>Туморите на главния мозък са злокачествени или доброкачествени новообразувания, които се развиват в тъканите на главния мозък или около него. </p>
+        <a href="tumors.html">Прочети още</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pagination">
+  <a href="articles.html" class="prev">&laquo; Предходна</a>
+  <div class="page-numbers"></div>
+  <a href="articles2.html" class="next">Следваща&raquo;</a>
+</div>
+
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-links">
+      <a href="index.html">Начало</a>
+      <a href="articles.html">Статии</a>
+      <a href="contacts.html">Контакти</a>
+    </div>
+    <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <p>Copyright © 2023
+        All rights reserved</p>
+      </div>
+</footer>
+
+
+
+
+
+</body>
+</html>
