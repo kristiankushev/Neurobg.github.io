@@ -21,7 +21,7 @@ header {
   font-size: 26px;
   font-weight: bold;
   box-shadow: 0px 10px 20px #bbb;
-  background-image: url("pictures/logo.png");
+  background-image: url("pictures/liifo.png");
   background-repeat: no-repeat;
   background-position: center left;
   background-size: 200px;
@@ -239,7 +239,7 @@ nav ul li .dropdown-menu a:hover {
   cursor: pointer;
 }
 .articles-section {
-padding: 50px;
+padding: 20px;
 }
 
 .article-container {
@@ -339,7 +339,17 @@ color: #333;
   max-width: 400px;
   margin: 40px;
 }
+@media only screen and (max-width: 1000px) {
+  #articles ul {
+    flex-direction: column; /* Change to a column layout for small screens */
+    align-items: stretch; /* Stretch items to full width */
+  }
 
+  #articles li {
+    max-width: none; /* Remove max-width for full width on smaller screens */
+    margin: 20px 0; /* Adjust margin for spacing on smaller screens */
+  }
+}
 #articles li img {
   display: block;
   max-width: 200px;
@@ -903,10 +913,7 @@ footer:hover {
   background-color: #004466;
   transition: background-color 0.7s ease-in-out;  
 }
-#map {
-      height: 400px;
-      width: 100%;
-    }
+
  @media screen and (min-width: 768px)
 #video-section {
   /* Use a shorthand notation for the top, right, bottom, and left properties */
