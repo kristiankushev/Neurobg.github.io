@@ -916,7 +916,7 @@ footer:hover {
   margin: 10px 0 0 0;
   position: relative;
   height: var(--video-height); /* Use the CSS variable for the height */
-  width: 100%;
+  width: 75%;
   /* Use a linear gradient as the background */
   
 }
