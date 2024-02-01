@@ -933,5 +933,5 @@ transform: scale(1); /* The initial scale of the video */
   transition: transform 1.7s; /* The duration and timing function of the animation */
 }
 video:hover {
-  transform: scale(1.4); /* The scale of the video on hover */
+  transform: scale(1.2); /* The scale of the video on hover */
 }
