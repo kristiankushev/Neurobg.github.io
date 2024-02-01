@@ -391,7 +391,7 @@ color: #333;
 }
 
 
-
+@media screen and (min-width: 768px)
 .article ul {
 	margin-left: 20px;
 	margin-bottom: 20px;
@@ -910,7 +910,7 @@ footer:hover {
       height: 400px;
       width: 100%;
     }
- 
+ @media screen and (min-width: 768px)
 #video-section {
   /* Use a shorthand notation for the top, right, bottom, and left properties */
   margin: 10px 0 0 0;
